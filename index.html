@@ -8,17 +8,57 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <style>
+    @media (min-width: 980px) {
+     .player{
+      width: 100%;
+      height:400px
+     }
+   }
+
+   @media (min-width: 768px) and (max-width: 979px) {
+     .player{
+      height: 350px;
+    }
+   }
+
+  @media (max-width: 480px) {
+    .player{height:220px}
+  }
+
+    </style>
   </head>
   <body>
     <section class="page-header">
       <h1 class="project-name">统计之都COS海外沙龙</h1>
-      <h2 class="project-tagline"></h2>
-      <a href="https://github.com/xueqingtv/cos-salon.xueqing.tv" class="btn">View on GitHub</a>
-      <a href="https://github.com/xueqingtv/cos-salon.xueqing.tv/zipball/master" class="btn">Download .zip</a>
-      <a href="https://github.com/xueqingtv/cos-salon.xueqing.tv/tarball/master" class="btn">Download .tar.gz</a>
     </section>
 
     <section class="main-content">
+    
+    
+    <div class="player">
+		<script type="text/javascript" src="http://cdn.supstat.com.cn/sewise/player/sewise.player.min.js"></script>
+    </div>
+
+  <script type="text/javascript">
+      SewisePlayer.setup({
+                server: 'vod',
+                type: 'm3u8',
+                videourl: 'http://video.xueqing.cc/output/cos-salon%2F15.m3u8',
+                skin: 'vodWhite',
+                title: '',
+                logo: 'http://supstat.com.cn/images/dot.gif',
+                lang: 'zh_CN',
+                autostart:'false',
+                poster:'',
+                topbardisplay: 'disable',
+                controlbardisplay: 'enable',
+                fallbackurl: []
+            });   
+
+</script>
+    
+    
       <h2>
 <a id="海外沙龙" class="anchor" href="#%E6%B5%B7%E5%A4%96%E6%B2%99%E9%BE%99" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>海外沙龙</h2>
 
