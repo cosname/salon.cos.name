@@ -33,8 +33,8 @@
     <script src="/node_modules/video.js/dist/video.min.js"></script>
       <!-- If you'd like to support IE8 -->
     <script src="/node_modules/video.js/dist/ie8/videojs-ie8.min.js"></script>
-    <script src="/node_modules/videojs-contrib-hls/dist/videojs-contrib-hls.min.js"></script>
-    <script src="https://src.litix.io/videojs/1/videojs-mux.js"></script>
+    <script src="/node_modules/hls.js/dist/hls.js"></script>
+    <script src="/js/videojs-hlsjs.js"></script>
     <!-- Some custom styles for the demo page -->
     <style>
       body {
@@ -179,24 +179,7 @@
       -- Now, initialize your player. That's it!
       -->
     <script>
-
-    window.player = videojs('preview-player', {
-      fluid: true,
-      plugins: {
-        hls: {
-         withCredentials: false
-        },
-        mux: {
-          data: {
-            property_key: 'VJSISBEST',
-            video_title: '',
-            video_id: 1
-          }
-        }        
-      }
-    });
-      
-      
+       videojs('video');
     </script>
     <script>
     $('.carousel').carousel('pause');
