@@ -183,13 +183,16 @@
     window.player = videojs('preview-player', {
       fluid: true,
       plugins: {
+        hls: {
+         withCredentials: false
+        },
         mux: {
           data: {
             property_key: 'VJSISBEST',
             video_title: '',
             video_id: 1
           }
-        }
+        }        
       }
     });
       
