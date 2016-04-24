@@ -34,7 +34,7 @@
       <!-- If you'd like to support IE8 -->
     <script src="/node_modules/video.js/dist/ie8/videojs-ie8.min.js"></script>
     <script src="/node_modules/videojs-contrib-hls/dist/videojs-contrib-hls.min.js"></script>
-
+    <script src="https://src.litix.io/videojs/1/videojs-mux.js"></script>
     <!-- Some custom styles for the demo page -->
     <style>
       body {
@@ -120,8 +120,8 @@
           <div class="col-md-10">
           <section class="starter-template">
 
-           <video id="example-video" class="video-js vjs-fluid vjs-default-skin" controls >
-          <source
+           <video id="preview-player" class="video-js vjs-default-skin" controls >
+           <source
              src="http://cdn.supstat.com.cn/video/cos-salon/15.m3u8"
              type="application/x-mpegURL" />
            </video>        
@@ -179,7 +179,21 @@
       -- Now, initialize your player. That's it!
       -->
     <script>
-      var player = videojs('example-video');
+
+    window.player = videojs('preview-player', {
+      fluid: true,
+      plugins: {
+        mux: {
+          data: {
+            property_key: 'VJSISBEST',
+            video_title: '',
+            video_id: 1
+          }
+        }
+      }
+    });
+      
+      
     </script>
     <script>
     $('.carousel').carousel('pause');
