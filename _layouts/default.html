@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+
+    <title>{{site.title}}</title>
+
+    <!-- Bootstrap core CSS. This is just to make the demo look
+    nice. It's not required for videojs-contrib-hls to work. -->
+    <link href="{{ '/assets/bootstrap/dist/css/bootstrap.min.css' | prepend: site.qiniubaseurl }}" rel="stylesheet">
+    
+    <!--[if lt IE 9]>
+		<script type="text/javascript" src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js"></script>
+		<script type="text/javascript" src="http://cdn.bootcss.com/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="{{ '/assets/player/sewise.player.min.js' | prepend: site.qiniubaseurl }}"></script>
+
+    <!-- Some custom styles for the demo page -->
+    <style>
+      body {
+        padding-top: 50px;
+        color: #868688;
+        background-color: #FAFCFF;
+      }
+      nav {
+        background-color: #e7e7e7
+      }
+      nav a {
+        color: #868688;
+      }
+      nav a:hover {
+        color: #FFFFFF;
+        text-decoration: none;
+      }
+      .navbar-toggle .icon-bar {
+        background-color: #868688;
+      }
+      .starter-template {
+        padding: 10px 15px;
+        text-align: center;
+      }
+      .carousel, .navbar{ background-color: #000000; }
+       .carousel-control { width: 8%; }
+      body {
+       font-family: "Open Sans", "Microsoft Yahei", "Hiragino Sans GB", "Microsoft Sans Serif", "WenQuanYi Micro Hei", sans-serif;
+       font-size: 16px;
+       font-weight: 400;
+       line-height: 1.6em;
+       color: #656565;
+    }
+    </style>
+
+  </head>
+
+  <body>
+  
+     <div id="wx_logo" style="display:none;">
+      <img src="http://7xs9ic.com1.z0.glb.clouddn.com/img/logo-cos-square.png" />
+     </div>
+
+    <nav class="navbar navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+        <!--
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          -->
+          <a class="navbar-brand" href="/">统计之都海外沙龙</a>
+        </div>
+        <!--
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="https://github.com/videojs/videojs-contrib-hls/blob/master/README.md">Docs</a></li>
+            <li><a href="https://github.com/videojs/videojs-contrib-hls">Source</a></li>
+            <li><a href="https://github.com/videojs/videojs-contrib-hls/issues">Issues</a></li>
+          </ul>
+        </div>
+        -->
+        <!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    
+    {{ content }}
+
+
+    <!-- Bootstrap stuff. These three scripts aren't necessary for you
+         to use videojs-contrib-hls -->
+    <script src="{{ '/assets/js/jquery.min.js' | prepend: site.qiniubaseurl }}"></script>
+    <script src="{{ '/assets/bootstrap/dist/js/bootstrap.min.js' | prepend: site.qiniubaseurl }}"></script>
+    <script src="{{ '/assets/js/ie10-viewport-bug-workaround.js' | prepend: site.qiniubaseurl }}"></script>
+    <script>
+    $('.carousel').carousel('pause');
+    $('#player').height(531); 
+    
+    $(window).resize(function() {
+     $('#player').height($('#player').width()*9/16); 
+    });
+    
+    $(document).ready(function() {
+     $("a[href*='http://']:not([href*='"+location.hostname+"']),[href*='https://']:not([href*='"+location.hostname+"'])").attr("target","_blank");
+    });
+    </script>
+  </body>
+</html>
