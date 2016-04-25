@@ -65,6 +65,7 @@
    .footer a{ color: #bc360a}
    .footer a:hover{color: #ea9629;}
    .title small{color: #FB1768;}
+   .title h2{font-size: 25px;}
     .post {
     margin: 0px 10px 20px 10px;
     text-align: left;
@@ -132,7 +133,7 @@
 
     
     <footer class="footer">
-        <p>© <a href="http://cos.name">统计之都</a> 2016 </p>
+        <p>© <a href="http://cos.name">统计之都</a> {{ site.posts[0].date | date: "%Y" }} </p>
     </footer>
     
 
@@ -144,7 +145,7 @@
     <script src="{{ '/assets/js/ie10-viewport-bug-workaround.js' | prepend: site.qiniubaseurl }}"></script>
     <script>
     $('.carousel').carousel('pause');
-    $('#player').height(531); 
+    $('#player').height($('#player').width()*9/16);  
     
     $(window).resize(function() {
      $('#player').height($('#player').width()*9/16); 
