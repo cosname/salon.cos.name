@@ -14,12 +14,13 @@
     nice. It's not required for videojs-contrib-hls to work. -->
     <link href="{{ '/assets/bootstrap/dist/css/bootstrap.min.css' | prepend: site.qiniubaseurl }}" rel="stylesheet">
     
+    <script src="{{ '/assets/js/jquery.min.js' | prepend: site.qiniubaseurl }}"></script>
+    <script src="{{ '/assets/bootstrap/dist/js/bootstrap.min.js' | prepend: site.qiniubaseurl }}"></script>
+    <script type="text/javascript" src="{{ '/assets/player/sewise.player.min.js' | prepend: site.qiniubaseurl }}"></script>
     <!--[if lt IE 9]>
 		<script type="text/javascript" src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js"></script>
 		<script type="text/javascript" src="http://cdn.bootcss.com/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
-    <script type="text/javascript" src="{{ '/assets/player/sewise.player.min.js' | prepend: site.qiniubaseurl }}"></script>
-
     <!-- Some custom styles for the demo page -->
     <style>
       body {
@@ -75,15 +76,16 @@
     margin-top: 10px;
     }
     </style>
-
   </head>
 
   <body>
+
+
   
      <div id="wx_logo" style="display:none;">
       <img src="http://7xs9ic.com1.z0.glb.clouddn.com/img/logo-cos-square.png" />
      </div>
-
+     
     <nav class="navbar navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -109,7 +111,7 @@
         <!--/.nav-collapse -->
       </div>
     </nav>
-    
+
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
@@ -127,21 +129,19 @@
     </div>
   </div>
 </div>
+
+ <script>
+    $('#new-event').click(function(){
+      $('#myModal').modal('show')
+    });
+ </script>
     
     {{ content }}
-
-
     
     <footer class="footer">
         <p>© <a href="http://cos.name">统计之都</a> {{ site.posts[0].date | date: "%Y" }} </p>
     </footer>
-    
 
-
-    <!-- Bootstrap stuff. These three scripts aren't necessary for you
-         to use videojs-contrib-hls -->
-    <script src="{{ '/assets/js/jquery.min.js' | prepend: site.qiniubaseurl }}"></script>
-    <script src="{{ '/assets/bootstrap/dist/js/bootstrap.min.js' | prepend: site.qiniubaseurl }}"></script>
     <script src="{{ '/assets/js/ie10-viewport-bug-workaround.js' | prepend: site.qiniubaseurl }}"></script>
     <script>
     $('.carousel').carousel('pause');
@@ -155,9 +155,6 @@
      $("a[href*='http://']:not([href*='"+location.hostname+"']),[href*='https://']:not([href*='"+location.hostname+"'])").attr("target","_blank");
     });
 
-    $('#new-event').click(function(){
-      $('#myModal').modal('show')
-    });
    </script>
   </body>
 </html>
