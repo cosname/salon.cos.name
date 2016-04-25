@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="icon" href="/favicon.ico">
 
-    <title>统计之都海外沙龙第15期</title>
+    <title>统计之都海外沙龙第4期</title>
 
     <!-- Bootstrap core CSS. This is just to make the demo look
     nice. It's not required for videojs-contrib-hls to work. -->
@@ -104,7 +104,7 @@
             SewisePlayer.setup({
                       server: 'vod',
                       type: 'm3u8',
-                      videourl: 'http://video.xueqing.tv/output/cos-salon/15.m3u8',
+                      videourl: 'http://video.xueqing.tv/output/cos-salon/4.m3u8',
                       poster: '',
                       skin: 'vodFlowPlayer',
                       title: '',
@@ -127,8 +127,13 @@
 
   <!-- Controls -->
  
+  <a class="left carousel-control" href="/video/2016-02-12/5/" role="button" data-slide="next" title="下一期">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+  
    
-  <a class="right carousel-control" href="/video/2016-04-15/14/" role="button" data-slide="prev"  title="前一期">
+  <a class="right carousel-control" href="/video/2016-01-29/3/" role="button" data-slide="prev"  title="前一期">
     <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
   </a>
@@ -139,12 +144,29 @@
 <div class="row">
    <div class="col-md-1"></div>
    <div class="col-md-10">       
-    <h2>本期内容 </h2>
-<p>            秦旭（芝加哥大学博士生）：causal&nbsp;mediation&nbsp;analysis&nbsp;（通常译为因果中介分析）——关于传统方法和前沿方法的简介。
-   </p>
-<p>            王婷（俄亥俄州立大学博士后）：如何把经济测量里的structural&nbsp;change&nbsp;test&nbsp;应用到心理学里的measurement&nbsp;invariance检测。
-   </p>
+    <h2 id="section">本期内容</h2>
 
+<p>本期沙龙第一位嘉宾是来自普度大学的邱怡轩，他分享的话题是“统计模型、数值计算与编程实现之间的关系”，又名“公式与代码之间隔了几本线性代数”：</p>
+
+<p>现在我们都知道，统计与计算已经密不可分，各种灵活强大的编程语言让大部分学统计做统计的人都可以快速地实现许多简单或复杂的统计模型。而当现在大家都在谈论大数据的时候，人们的关注点开始从“如何算得对”向“如何算得快”进行转变。</p>
+
+<p>就拿统计里面最经典的多元回归来说，在我们随手就可以lm()或者proc glm的时候，我们是否细想过它们背后的实现是怎样的？统计课本告诉我们</p>
+
+<p><code class="highlighter-rouge">yhat = X(X'X)^(-1)X'y</code></p>
+
+<p>你或许也曾写过</p>
+
+<p><code class="highlighter-rouge">x %% solve(t(x) %% x) %% t(x) %% y</code></p>
+
+<p>这样的代码（问题在哪儿？），但这都不是计算的真相。这一期沙龙里我们来八一八做回归的一百种方式（夸张了些！），一步一步揭开高性能计算的神秘面纱。</p>
+
+<h2 id="section-1">推荐阅读</h2>
+
+<p>Matrix decompositions for regression analysis:  <a href="http://pages.stat.wisc.edu/~st849-1/lectures/Orthogonal.pdf">http://pages.stat.wisc.edu/~st849-1/lectures/Orthogonal.pdf</a></p>
+
+<p>Fast and Elegant Numerical Linear Algebra Using the RcppEigen Package（第4节）: <a href="http://www.jstatsoft.org/index.php/jss/article/view/v052i05/v52i05.pdf">http://www.jstatsoft.org/index.php/jss/article/view/v052i05/v52i05.pdf</a></p>
+
+<p>第二位嘉宾是来自西安交通大学管理学院的常象宇教授，他将介绍用统计模型模型去描述社交网络的特性。</p>
        
     <h2>
 <a id="海外沙龙" class="anchor" href="#%E6%B5%B7%E5%A4%96%E6%B2%99%E9%BE%99" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>海外沙龙</h2>

@@ -9,4 +9,4 @@ qiniubaseurl: "http://7xt9wt.com1.z0.glb.clouddn.com"  # qiniu CDN speedup
 
 # Build settings
 markdown: kramdown
-permalink: /event/:year-:month-:day/:title/
+permalink: /video/:year-:month-:day/:title/
