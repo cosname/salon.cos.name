@@ -37,11 +37,12 @@
         color: #FFFFFF;
         text-decoration: none;
       }
+      .navbar-nav > li > a:hover{background-color:#222222;color:#FFFFFF}
       .navbar-toggle .icon-bar {
         background-color: #868688;
       }
       .starter-template {
-        padding: 10px 15px;
+        padding: 10px 0;
         text-align: center;
       }
       .carousel, .navbar{ background-color: #000000; }
@@ -52,6 +53,30 @@
        font-weight: 400;
        line-height: 1.6em;
        color: #656565;
+    }
+    .footer {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin-top: 40px;
+    text-align:center;
+    background-color: #eeeeee;
+    color: #333333;
+   }
+   .footer a{ color: #bc360a}
+   .footer a:hover{color: #ea9629;}
+   .title small{color: #FB1768;}
+   .deco-line {
+    background: url("/assets/images/long-deco-line.png") no-repeat scroll center center transparent;
+    height: 26px;
+    width: 100%;
+    }
+    .post {
+    margin: 0px 10px 20px 10px;
+    text-align: left;
+    }
+    .entry p {
+    margin-bottom: 15px;
+    margin-top: 10px;
     }
     </style>
 
@@ -66,31 +91,55 @@
     <nav class="navbar navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
-        <!--
+        
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          -->
+          
           <a class="navbar-brand" href="/">统计之都海外沙龙</a>
         </div>
-        <!--
-        <div id="navbar" class="collapse navbar-collapse">
+     
+        <div id="navbar" class="collapse navbar-collapse pull-right">
           <ul class="nav navbar-nav">
-            <li><a href="https://github.com/videojs/videojs-contrib-hls/blob/master/README.md">Docs</a></li>
-            <li><a href="https://github.com/videojs/videojs-contrib-hls">Source</a></li>
-            <li><a href="https://github.com/videojs/videojs-contrib-hls/issues">Issues</a></li>
+            <li><a href="/">首页</a></li>
+            <li><a href="javascript:;" id="new-event">活动预告</a></li>
+            <li><a href="/history">历次视频</a></li>
           </ul>
         </div>
-        -->
+      
         <!--/.nav-collapse -->
       </div>
     </nav>
-
+    
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h3 class="modal-title" id="myModalLabel">最新活动</h3>
+      </div>
+      <div class="modal-body">
+        {% include new-event.html %}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">知道了</button>
+      </div>
+    </div>
+  </div>
+</div>
     
     {{ content }}
+
+
+    
+    <footer class="footer">
+        <p>© <a href="http://cos.name">统计之都</a> 2016 </p>
+    </footer>
+    
 
 
     <!-- Bootstrap stuff. These three scripts aren't necessary for you
@@ -109,6 +158,10 @@
     $(document).ready(function() {
      $("a[href*='http://']:not([href*='"+location.hostname+"']),[href*='https://']:not([href*='"+location.hostname+"'])").attr("target","_blank");
     });
-    </script>
+
+    $('#new-event').click(function(){
+      $('#myModal').modal('show')
+    });
+   </script>
   </body>
 </html>

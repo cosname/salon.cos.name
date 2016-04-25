@@ -30,6 +30,9 @@ layout: default
           </script>         
            
            </div>
+           <div class="starter-template">
+           <p>{{ page.title }}</p>
+           </div>
            </div>
           <div class="col-md-1"></div>
          </div>         
@@ -39,13 +42,13 @@ layout: default
 
   <!-- Controls -->
  {% if page.next.url %}
-  <a class="left carousel-control" href="{{page.next.url}}" role="button" data-slide="next" title="下一期">
+  <a class="left carousel-control hidden-xs" href="{{page.next.url}}" role="button" data-slide="next" title="下一期">
     <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
   {% endif %}
    {% if page.previous.url %}
-  <a class="right carousel-control" href="{{page.previous.url}}" role="button" data-slide="prev"  title="前一期">
+  <a class="right carousel-control hidden-xs" href="{{page.previous.url}}" role="button" data-slide="prev"  title="前一期">
     <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
   </a>
@@ -55,9 +58,27 @@ layout: default
 <div class="container">
 <div class="row">
    <div class="col-md-1"></div>
-   <div class="col-md-10">       
+   <div class="col-md-10">  
+     <h2>本期内容 </h2>   
     {{ content }}       
     {% include intro.html %}
+    
+    <div class="center-block text-center">
+          <ul class="pagination">
+          {% if page.next %}
+            <li class="next"><a href="{{ page.next.url }}" title="{{ page.next.title }}">&laquo; 下一期</a></li>
+          {% else %}
+            <li class="next disabled"><a>&larr; 下一期</a></li>
+          {% endif %}
+            <li><a href="/history" title="历次视频">历次视频</a></li>
+          {% if page.previous %}
+            <li class="prev"><a href="{{ page.previous.url }}" title="{{ page.previous.title }}">前一期 &raquo;</a></li>
+          {% else %}
+            <li class="prev disabled"><a>前一期 &rarr;</a>
+          {% endif %}
+          </ul>
+     </div>
+    
    </div>
     <div class="col-md-1"></div>
 </div>

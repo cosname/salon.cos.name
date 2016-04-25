@@ -10,3 +10,8 @@ qiniubaseurl: "http://7xt9wt.com1.z0.glb.clouddn.com"  # qiniu CDN speedup
 # Build settings
 markdown: kramdown
 permalink: /video/:year-:month-:day/:title/
+
+gems: [jekyll-paginate]
+
+paginate: 10
+paginate_path: "history/page:num"

@@ -1,0 +1,75 @@
+---
+layout: default
+title: 历次视频
+---
+
+<div class="container">
+<div class="row">
+   <div class="col-md-1"></div>
+   <div class="col-md-10">       
+    
+    
+{% for post in paginator.posts %}
+<div class="post">
+  <div class="title">
+    <h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
+    {% if post.date %}
+    <small>{{ post.date | date: "%Y 年 %m 月 %d 日" }} 
+    {% endif %}
+
+    </small>
+  </div><!-- END title -->
+  <div class="entry">
+    {{ post.content | split: '<!-- more -->' | first }}    
+    <p><a class="btn btn-info btn-primary pull-right" href="{{ site.baseurl }}{{ post.url }}">查看视频→</a></p>
+  </div><!-- END entry -->
+</div><!-- END post -->
+<div class="clearfix"></div>
+<hr style="color:#333333" />
+{% endfor %}
+
+
+	<div class="center-block text-center">
+		<ul class="pagination hidden-xs">
+     {%if paginator.page == 1 %}
+		 <li class="disabled"><a href="javascript:;" title="第一页">第一页</a></li>
+		 {% else %}
+     <li><a href="/history" title="第一页">第一页</a></li>
+		 {% endif %}
+     {% if paginator.previous_page %}
+      <li><a href="{{ paginator.previous_page_path }}" title="上一页">上一页</a></li>
+     {% else %}
+      <li class="disabled"><a href="javascript:;" title="上一页">上一页</a></li>
+     {% endif %}
+		  <li class="active"><a href="javascript:;">第 {{ paginator.page }} 页</a></li>
+     {% if paginator.next_page %}
+       <li><a href="{{ paginator.next_page_path }}" title="下一页">下一页</a></li>
+     {% else %}
+       <li class="disabled"><a href="javascript:;" title="下一页">下一页</a></li>
+     {% endif %}
+     {%if paginator.page == paginator.total_pages %}
+        <li class="disabled"><a href="javascript:;" title="最后一页">最后一页</a></li>
+     {% else %}
+        <li><a href="/history/page{{ paginator.total_pages }}" title="最后一页">最后一页</a></li>
+     {% endif %}
+		</ul>
+    <ul class="pagination visible-xs-inline-block">     
+     {% if paginator.previous_page %}
+      <li><a href="{{ paginator.previous_page_path }}" title="上一页">上一页</a></li>
+     {% else %}
+      <li class="disabled"><a href="javascript:;" title="上一页">上一页</a></li>
+     {% endif %}
+		  <li class="active"><a href="javascript:;">第 {{ paginator.page }} 页</a></li>
+     {% if paginator.next_page %}
+       <li><a href="{{ paginator.next_page_path }}" title="下一页">下一页</a></li>
+     {% else %}
+       <li class="disabled"><a href="javascript:;" title="下一页">下一页</a></li>
+     {% endif %}     
+		</ul>
+	</div>  
+
+    
+    </div>
+    <div class="col-md-1"></div>
+</div>
+</div>
