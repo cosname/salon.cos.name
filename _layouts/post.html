@@ -46,7 +46,12 @@ layout: default
     <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
-  {% endif %}
+   {% else %}
+   <a class="new-event left carousel-control hidden-xs" href="javascript:;" role="button" data-slide="next" title="下一期">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+   {% endif %}
    {% if page.previous.url %}
   <a class="right carousel-control hidden-xs" href="{{page.previous.url}}" role="button" data-slide="prev"  title="前一期">
     <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>

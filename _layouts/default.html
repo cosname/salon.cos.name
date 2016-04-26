@@ -10,12 +10,8 @@
 
     <title>{{ page.title }}</title>
 
-    <!-- Bootstrap core CSS. This is just to make the demo look
-    nice. It's not required for videojs-contrib-hls to work. -->
     <link href="{{ '/assets/bootstrap/dist/css/bootstrap.min.css' | prepend: site.qiniubaseurl }}" rel="stylesheet">
-    
-    <script src="{{ '/assets/js/jquery.min.js' | prepend: site.qiniubaseurl }}"></script>
-    <script src="{{ '/assets/bootstrap/dist/js/bootstrap.min.js' | prepend: site.qiniubaseurl }}"></script>
+
     <script type="text/javascript" src="{{ '/assets/player/sewise.player.min.js' | prepend: site.qiniubaseurl }}"></script>
     <!--[if lt IE 9]>
 		<script type="text/javascript" src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js"></script>
@@ -79,9 +75,6 @@
   </head>
 
   <body>
-
-
-  
      <div id="wx_logo" style="display:none;">
       <img src="http://7xs9ic.com1.z0.glb.clouddn.com/img/logo-cos-square.png" />
      </div>
@@ -103,7 +96,7 @@
         <div id="navbar" class="collapse navbar-collapse pull-right">
           <ul class="nav navbar-nav">
             <li><a href="/">首页</a></li>
-            <li><a href="javascript:;" id="new-event">活动预告</a></li>
+            <li><a href="javascript:;" class="new-event">活动预告</a></li>
             <li><a href="/history">历次视频</a></li>
           </ul>
         </div>
@@ -130,31 +123,34 @@
   </div>
 </div>
 
- <script>
-    $('#new-event').click(function(){
-      $('#myModal').modal('show')
-    });
- </script>
-    
+   
     {{ content }}
     
     <footer class="footer">
         <p>© <a href="http://cos.name">统计之都</a> {{ site.posts[0].date | date: "%Y" }} </p>
     </footer>
+        
+    <script src="{{ '/assets/js/jquery.min.js' | prepend: site.qiniubaseurl }}"></script>
+    <script src="{{ '/assets/bootstrap/dist/js/bootstrap.min.js' | prepend: site.qiniubaseurl }}"></script>
 
-    <script src="{{ '/assets/js/ie10-viewport-bug-workaround.js' | prepend: site.qiniubaseurl }}"></script>
-    <script>
-    $('.carousel').carousel('pause');
-    $('#player').height($('#player').width()*9/16);  
+   <script>
     
-    $(window).resize(function() {
-     $('#player').height($('#player').width()*9/16); 
-    });
+   $(document).ready(function() {
     
-    $(document).ready(function() {
+     $('.carousel').carousel('pause');
+     $('#player').height($('#player').width()*9/16);  
+    
+     $(window).resize(function() {
+       $('#player').height($('#player').width()*9/16); 
+     });
+     $('.new-event').click(function(){
+       $('#myModal').modal('show')
+     });
+
      $("a[href*='http://']:not([href*='"+location.hostname+"']),[href*='https://']:not([href*='"+location.hostname+"'])").attr("target","_blank");
-    });
+   });
 
    </script>
+   <script src="{{ '/assets/js/ie10-viewport-bug-workaround.js' | prepend: site.qiniubaseurl }}"></script>
   </body>
 </html>
