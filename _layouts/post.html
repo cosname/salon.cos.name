@@ -20,7 +20,7 @@ layout: default
                       poster: '{% if page.cover %}{{ page.cover }}{% endif %}',
                       skin: 'vodFlowPlayer',
                       title: '',
-                      logo: 'http://supstat.com.cn/images/dot.gif',
+                      logo: '{{ "/assets/images/dot.gif" | prepend: site.qiniubaseurl }}',
                       lang: 'zh_CN',
                       autostart:'false',
                       topbardisplay: 'disable',
