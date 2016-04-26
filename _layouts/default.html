@@ -133,7 +133,11 @@
     </footer>
 
    <script>
-    
+   
+   $('.new-event').click(function(){
+       $('#myModal').modal('show')
+   });
+      
    $(document).ready(function() {
     
      $('.carousel').carousel('pause');
@@ -141,9 +145,6 @@
     
      $(window).resize(function() {
        $('#player').height($('#player').width()*9/16); 
-     });
-     $('.new-event').click(function(){
-       $('#myModal').modal('show')
      });
 
      $("a[href*='http://']:not([href*='"+location.hostname+"']),[href*='https://']:not([href*='"+location.hostname+"'])").attr("target","_blank");
