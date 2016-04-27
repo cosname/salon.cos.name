@@ -20,8 +20,9 @@ title: 历次视频
     </small>
   </div><!-- END title -->
   <div class="entry">
-    {{ post.content | split: '<!-- more -->' | first }}    
-    <p><a class="btn btn-info btn-primary pull-right" href="{{ site.baseurl }}{{ post.url }}">查看视频→</a></p>
+    {% assign  urlstr =  post.url | append:'?t='  %}
+    {{ post.content | replace : 'javascript:seekTo(', urlstr | replace : ');" class="btn btn-sm btn-warning">跳到这段','" class="btn btn-sm btn-warning">跳到这段'  }}    
+    <p><a class="btn btn-primary pull-right" href="{{ site.baseurl }}{{ post.url }}">查看视频→</a></p>
   </div><!-- END entry -->
 </div><!-- END post -->
 <div class="clearfix"></div>

@@ -24,7 +24,11 @@ layout: default
 	         } else{
 	        	 var vautostart = 'false';
              var vstarttime = 0;
-	         }         
+	         }  
+
+           function seekTo(time){
+		          	SewisePlayer.doSeek(time);
+		       }           
            
            SewisePlayer.setup({
                       server: 'vod',
