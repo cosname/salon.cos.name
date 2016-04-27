@@ -13,7 +13,20 @@ layout: default
           <div class="starter-template">
           <div id="player" style="width:100%;margin-left:auto;margin-right:auto"></div>          
            <script type="text/javascript">
-            SewisePlayer.setup({
+           var href= window.location.href;
+           var pos = href.indexOf('?t=');
+           var param = href.substring(pos+3);
+           var paramNum = Number(param);
+           
+           if(pos>0 && !isNaN(paramNum)){
+        		 var vautostart = 'true';
+             var vstarttime = paramNum;
+	         } else{
+	        	 var vautostart = 'false';
+             var vstarttime = 0;
+	         }         
+           
+           SewisePlayer.setup({
                       server: 'vod',
                       type: 'm3u8',
                       videourl: '{{ page.video}}',
@@ -22,10 +35,11 @@ layout: default
                       title: '',
                       logo: '{{ "/assets/images/dot.gif" | prepend: site.qiniubaseurl }}',
                       lang: 'zh_CN',
-                      autostart:'false',
+                      autostart: vautostart,
                       topbardisplay: 'disable',
                       controlbardisplay: 'enable',
                       claritybutton: "disable",
+                      starttime: vstarttime,
             }, "player");
           </script>         
            
