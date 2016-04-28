@@ -2,6 +2,12 @@
 layout: default
 ---
 
+        {% if page.ad %} 
+           {% assign Ad = page.ad %}
+        {% else %}
+           {% assign Ad = site.ad %}
+        {% endif %}   
+
  <div id="carousel-example-generic" class="carousel slide">
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
@@ -28,7 +34,7 @@ layout: default
 
            function seekTo(time){
 		          	SewisePlayer.doSeek(time);
-		       }           
+		       }       
            
            SewisePlayer.setup({
                       server: 'vod',
@@ -45,6 +51,32 @@ layout: default
                       claritybutton: "disable",
                       starttime: vstarttime,
             }, "player");
+          
+        {% if Ad %}          
+          var play = 0;
+          
+          SewisePlayer.onStart(function(id){
+             play = 1;
+          });           
+
+          SewisePlayer.onPause(function(id){
+              if( play == 1 ){
+                layer.open({
+                type: 1,
+                skin: 'layui-layer-demo', //样式类名
+                closeBtn: 1, //不显示关闭按钮
+                shift: 1,
+                time: 5000,
+                title: false,
+                shadeClose: false, //开启遮罩关闭
+                content: '<a href="{{Ad.url}}" target="_blank"><img src="{{Ad.image}}" style="width:100%;height:100%" /></a>',
+                success: function(layero, index){
+                   play = 0;
+                }   
+              });       
+             }  
+           });  
+         {% endif %}   
           </script>         
            
            </div>

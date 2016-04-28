@@ -15,3 +15,7 @@ gems: [jekyll-paginate]
 
 paginate: 10
 paginate_path: "history/page:num"
+
+ad:
+    image: 'http://7xs9ic.com1.z0.glb.clouddn.com/img/China-R-Logo-trans.png'
+    url: 'http://china-r.org/'
