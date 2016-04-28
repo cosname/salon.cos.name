@@ -1,7 +1,7 @@
 title: 统计之都海外沙龙
 email: contact@cos.name
 description: 
-keywords: R语言, 数据科学，数据分析, 数据挖掘, 机器学习, 商业智能, 大数据
+keywords: "R语言, 数据科学，数据分析, 数据挖掘, 机器学习, 商业智能, 大数据"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site
 
@@ -19,3 +19,6 @@ paginate_path: "history/page:num"
 ad:
     image: 'http://7xs9ic.com1.z0.glb.clouddn.com/img/China-R-Logo-trans.png'
     url: 'http://china-r.org/'
+    area: 
+        width: 450
+        height: 288
