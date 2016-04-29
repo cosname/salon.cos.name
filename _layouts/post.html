@@ -2,7 +2,7 @@
 layout: default
 ---
 
-        {% if page.ad  %} 
+        {% if page.ad.image  %} 
            {% assign Ad = page.ad %}
         {% else %}
            {% assign Ad = site.ad %}
@@ -53,7 +53,7 @@ layout: default
                       starttime: vstarttime,
             }, "player");
           
-      {% if Ad %}
+      {% if Ad.image %}
       var link=window.location.href.substr(window.location.href.lastIndexOf("/")+1);
 			if(!/Android|Windows Phone|webOS|iPhone|iPad|BlackBerry/i.test(navigator.userAgent)){ 
       
