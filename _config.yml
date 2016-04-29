@@ -17,8 +17,8 @@ paginate: 10
 paginate_path: "history/page:num"
 
 ad:
-    image: 'http://7xs9ic.com1.z0.glb.clouddn.com/img/China-R-Logo-trans.png'
+    image: 'http://7xt9wt.com2.z0.glb.clouddn.com/images/logo-chinar-ad.png'
     url: 'http://china-r.org/'
     area: 
-        width: 450
-        height: 288
+        width: 360
+        height: 150
