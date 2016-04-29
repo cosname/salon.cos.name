@@ -53,7 +53,10 @@ layout: default
                       starttime: vstarttime,
             }, "player");
           
-        {% if Ad %}          
+        {% if Ad %}
+      var link=window.location.href.substr(window.location.href.lastIndexOf("/")+1);
+			if(!/Android|Windows Phone|webOS|iPhone|iPad|BlackBerry/i.test(navigator.userAgent)){ 
+      
           var play = 0;
           
           SewisePlayer.onStart(function(id){
@@ -78,7 +81,8 @@ layout: default
                 }   
               });       
              }  
-           });  
+           }); 
+         }           
          {% endif %}   
           </script>         
            
