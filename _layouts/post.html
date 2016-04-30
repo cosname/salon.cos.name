@@ -53,9 +53,7 @@ layout: default
                       starttime: vstarttime,
             }, "player");
           
-      {% if Ad.image %}
-      var link=window.location.href.substr(window.location.href.lastIndexOf("/")+1);
-			if(!/Android|Windows Phone|webOS|iPhone|iPad|BlackBerry/i.test(navigator.userAgent)){ 
+      {% if Ad.image %}  
       
           var play = 0;
           
@@ -64,6 +62,7 @@ layout: default
           });           
 
           SewisePlayer.onPause(function(id){
+			      if(!/Android|Windows Phone|webOS|iPhone|iPad|BlackBerry/i.test(navigator.userAgent)){ 
               if( play == 1 ){
                 layer.open({
                 type: 1,
@@ -80,10 +79,11 @@ layout: default
                    play = 0;
                 }   
               });       
-             }  
+             }
+            } 
            }); 
-         }           
-         {% endif %}   
+                    
+       {% endif %}   
           </script>         
            
            </div>
