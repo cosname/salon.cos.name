@@ -302,7 +302,7 @@ div.sewise-player-ui div.big-play-btn:hover a.big-play-icon {
 
 /*多分辨率开关按钮*/
 div.sewise-player-ui div.clarity-switch-btn {
-	position: absolute;
+	position: absolute;  
 	width: 40px;
 	height: 40px;
 	left: 100%;
